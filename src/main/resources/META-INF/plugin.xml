@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.github.brinxmat.intellijturtleplugin</id>
-    <name>intellij-turtle-plugin</name>
+    <name>turtle</name>
     <vendor>brinxmat</vendor>
 
     <!-- Product and plugin compatibility requirements -->
@@ -10,10 +10,9 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.brinxmat.intellijturtleplugin.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.brinxmat.intellijturtleplugin.services.MyProjectService"/>
+        <fileType name="Turtle File" implementationClass="com.github.brinxmat.intellijturtleplugin.language.TurtleFileType"
+                      fieldName="INSTANCE" language="Turtle" extensions="ttl"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.brinxmat.intellijturtleplugin.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <applicationListeners />
 </idea-plugin>
